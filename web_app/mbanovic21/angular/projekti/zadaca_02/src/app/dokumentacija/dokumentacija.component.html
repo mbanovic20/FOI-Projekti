@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="hr">
+
+<head>
+    <title>O autoru</title>
+    <meta charset="UTF-8">
+    <meta name="Autor" content="Matej Banović">
+    <meta name="Opis" content="Student treće godine Fakulteta organizacije i informatike u Varaždinu">
+    <meta name="Ključne riječi" content="html, css, hotel">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="content-wrapper">
+        <header class="main-header">
+            <h2>Dokumentacija</h2>
+        </header>
+
+        <main class="main-content">
+            <section class="author-section">
+                <div class="author-image">
+                    <img src="../../assets/mbanovic21.jpg" alt="Matej Banović">
+                </div>
+                <h2>Podaci o autoru</h2>
+                <ul class="author-details">
+                    <li>Ime i prezime: Matej Banović</li>
+                    <li>E-mail: <a href="mailto:mbanovic21&#64;student.foi.hr">mbanovic21&#64;student.foi.hr</a></li>
+                </ul>
+                <div class="era-model">
+                    <a href="../../assets/RWA2023mbanovic21.png" target="_blank">
+                        <img src="../../assets/RWA2023mbanovic21.png" alt="ERA_model">
+                    </a>
+                </div>
+            </section>
+
+            <section class="configuration-table">
+                <h2>Tablica 1. Pregled konfiguracijskih parametara</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Naziv konfiguracije</th>
+                            <th>Vrijednost</th>
+                            <th>Status</th>
+                            <th>Informacije koji dijelovi nisu napravljeni</th>
+                            <th>Dodatne informacije o greškama</th>
+                            <th>Istaknuti dijelovi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>jwtValjanost</td>
+                            <td>Broj od 15 - 3600</td>
+                            <td>Napravljeno</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>jwtTajniKljuc</td>
+                            <td rowspan="2">
+                                Veličina: 50 - 100 znakova<br>
+                                Dozvoljava: velika i mala slova te brojke
+                            </td>
+                            <td>Napravljeno</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>tajniKljucSesija</td>
+                            <td>Napravljeno</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>appStranicenje</td>
+                            <td>Broj od 5 - 100</td>
+                            <td>Napravljeno</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>tmdbApiKeyV3</td>
+                            <td>Nema restrikcija</td>
+                            <td>Napravljeno</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="rest-service-table">
+                <h2>Tablica 2. Pregled resursa, metoda i parametara REST servisa</h2>
+                <!-- Tablica REST servisa -->
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Resurs <br> Parametri</th>
+                            <th>GET čitanje</th>
+                            <th>POST kreiranje</th>
+                            <th>PUT ažuriranje</th>
+                            <th>DELETE brisanje</th>
+                            <th>Informacije koji dijelovi nisu napravljeni</th>
+                            <th>Dodatne informacije o greškama</th>
+                            <th>Istaknuti dijelovi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>baza/korisnici</td>
+                            <td>Da</td>
+                            <td>Da</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>baza/korisnici/{{ '{korime}' }}</td>
+                            <td>Da</td>
+                            <td>Da</td>
+                            <td>Da</td>
+                            <td>Da</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>baza/korisnici/{{ '{korime}' }}/prijava</td>
+                            <td>Ne</td>
+                            <td>Da</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>baza/favoriti</td>
+                            <td>Ne</td>
+                            <td>Ne</td>
+                            <td></td>
+                            <td></td>
+                            <td>Nije napravljeno.</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>baza/favoriti/{{ '{id}' }}</td>
+                            <td>Ne</td>
+                            <td>Da</td>
+                            <td>Da</td>
+                            <td>Ne</td>
+                            <td>Nije napravljeno.</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                baza/dnevnik <br>
+                                ?stranica=broj <br>
+                                &sortiraj=[d | m] <br>
+                                [&datumOd=datum] <br>
+                                [&datumDo=datum] <br>
+                                [&vrijemeOd=vrijeme] <br>
+                                [&vrijemeDo=vrijeme] <br>
+                            </td>
+                            <td>Ne</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Nije napravljeno.</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="progress-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>NAPOMENA</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1.</td>
+                            <td>Prilikom pokretanja angular projekta u direktoriju "mbanovic21/angular" potrebno je
+                                najprije u terminalu pokrenuti naredbu "npm install" kako bi se instalirali svi potrebni node moduli.
+                                Nakon toga moguće je sa npm start pokrenuti angular projekt.</td>
+                        </tr>
+                        <tr>
+                            <td>2.</td>
+                            <td>Prije pokretanja poslužiteljske strane na putanji "mbanovic21/server" pokrenite u terminalu "npm run pripremi" kako bi se instalirali
+                                node moduli koji su potrebni za rad.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3.</td>
+                            <td>Ne zaboravite prije pokretanja servera u konfiguracijsku datoteku "rwa_mbanovic21_conf.csv" unijeti svoje tmdbApiKeyV3 i tmdbApiKeyV4.</td>
+                        </tr>
+                        <tr>
+                            <td>4.</td>
+                            <td>Kod pokretanja poslužiteljske strane "mbanovic21/server" sa npm start se pokreće glavni server "appServer.mjs".
+                                Prilikom interakcije sa bazom potrebno je pokrenuti i restServer.mjs, on se nalazi na putanji "mbanovic21/server/aplikacija/servis",
+                                te ondje pokrenuti naredbu "npm start" kako bi se pokrenuo REST server.
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5.</td>
+                            <td>Kad se prijavite kao gost, i pokušate pristupiti nekoj od stranica kojima gost nema pristup, automatski će vas redirectati na
+                                početnu stranicu (ima ispis svake rute kojoj pristupate u konzoli). Tako da ne mislite da nije funkcionalno, već se trebate prijaviti
+                                sa pravom ulogom kako biste omogućili pristup određenim rutama.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h2>Tablica 3. Pregled napretka zadaće 02</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Korak</th>
+                            <th>Opis koraka</th>
+                            <th>Status</th>
+                            <th>Informacije koji dijelovi nisu napravljeni</th>
+                            <th>Dodatne informacije o greškama</th>
+                            <th>Istaknuti dijelovi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Ažuriranje informacija iz zadaće 1 - o napretku servisa i aplikacije.</td>
+                            <td>Napravljeno</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Kreiranje tablice s koracima i statusom zadaće 2.</td>
+                            <td>Napravljeno</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Postavljanje package.json za npm start servera i Angular projekta.</td>
+                            <td>Napravljeno</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Uklanjanje TMDB ključeva iz konfiguracijske datoteke pri predaji.</td>
+                            <td>Napravljeno</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Prijelaz na Angular sa TypeScriptom za klijentski dio aplikacije.</td>
+                            <td>Napravljeno</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Korištenje kompajlirane verzije Angular aplikacije.</td>
+                            <td>Napravljeno</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Integracija dokumentacije u pozadinski dio aplikacije i u samu angular apliaciju</td>
+                            <td>Napravljeno</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>REST servis za rad s bazom podataka i ostale pozadinske funkcionalnosti.</td>
+                            <td>Napravljeno</td>
+                            <td>Favoriti i favoritiDetalji za rad s bazom podataka, dnevnik, registracija napravljena
+                                bez e-mail dijela!</td>
+                            <td></td>
+                            <td>Favoriti i favoritiDetalji su napravljeni prema uputama iz zadaće 02, odnosno za rad sa
+                                local storage-om samo kad je korisnik prijavljen preko gitHub računa.</td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>Validacija JWT-a za pozadinske servise.</td>
+                            <td>Nije napravljeno</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>Upotreba environment datoteka za bazne adrese i portove.</td>
+                            <td>Napravljeno</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>Poboljšanje dizajna stranice korištenjem Sass/Scss.</td>
+                            <td>Napravljeno</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>Implementacija reCaptcha v3 na formama za prijavu, registraciju i ažuriranje profila.
+                            </td>
+                            <td>Napravljeno</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>Ažuriranje profila s opcijom dvorazinske autentifikacije.</td>
+                            <td>Napravljeno</td>
+                            <td>Nije napravljen dio za dodatne bodove, odnosno QR kod.</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td>Dvorazinske autentifikacija u prijavi.</td>
+                            <td>Napravljeno</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>Prijava putem oAuth i GitHub računa.</td>
+                            <td>Napravljeno</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td>GitHub prijava i upravljanje favoritima u local storage-u.</td>
+                            <td>Napravljeno</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>17</td>
+                            <td>Kreiranje testnog korisnika za lakše testiranje.</td>
+                            <td>Napravljeno</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>18</td>
+                            <td>Prelazak pozadinskog dijela aplikacije na TypeScript.</td>
+                            <td>Nije napravljeno</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>

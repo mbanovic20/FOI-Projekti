@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="hr">
+
+<head>
+    <title>Početna</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <main>
+        <div *ngIf="serija">
+            <h2>Detalji serije: {{ serija.name }}</h2>
+            <table class="detalji-tabele">
+                <tr>
+                    <th>Naziv</th>
+                    <td>{{ serija.name }}</td>
+                </tr>
+                <tr>
+                    <th>Opis</th>
+                    <td>{{ serija.overview }}</td>
+                </tr>
+                <tr>
+                    <th>Broj sezona</th>
+                    <td>{{ serija.number_of_seasons }}</td>
+                </tr>
+                <tr>
+                    <th>Broj epizoda</th>
+                    <td>{{ serija.number_of_episodes }}</td>
+                </tr>
+                <tr>
+                    <th>Popularnost</th>
+                    <td>{{ serija.popularity }}</td>
+                </tr>
+                <tr>
+                    <th>Poster</th>
+                    <td><img [src]="'https://image.tmdb.org/t/p/w600_and_h900_bestv2/' + serija.poster_path" width="100"
+                            [alt]="'slika_' + serija.name"></td>
+                </tr>
+                <tr>
+                    <th>Službena stranica</th>
+                    <td><a [href]="serija.homepage">Posjetite ovdje</a></td>
+                </tr>
+            </table>
+            <button (click)="spremiUFavorite(serija)">Spremi u favorite</button>
+            <p *ngIf="poruka">{{ poruka }}</p>
+        </div>
+    </main>
+    <br><br>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="hr">
+
+<head>
+    <title>Početna</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <main>
+        Tražilica: <input type="text" [(ngModel)]="filter" placeholder="Traži serije..."
+            (input)="dajSerije(trenutnaStranica)">
+        <div>
+            <button (click)="pocetak(1)">početak</button>
+            <button (click)="prethodnaStranica()">prethodna</button>
+            <button>{{trenutnaStranica}} / {{ ukupnoStranica }}</button>
+            <button (click)="sljedecaStranica()">sljedeća</button>
+            <button (click)="kraj(ukupnoStranica)">kraj</button>
+        </div>
+        <div *ngIf="serije.length > 0">
+            <table>
+                <tr>
+                    <th>Naziv</th>
+                    <th>Opis</th>
+                    <th>Detalji</th>
+                </tr>
+                <tr *ngFor="let serija of serije">
+                    <td>{{ serija.name }}</td>
+                    <td>{{ serija.overview }}</td>
+                    <td><button (click)="prikaziDetalje(serija.id)">Detalji</button></td>
+                </tr>
+            </table>
+        </div>
+        <div id="poruka"></div>
+    </main>
+    <br><br>
+</body>
+
+</html>

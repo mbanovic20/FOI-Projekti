@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="hr">
+
+<head>
+    <title>O autoru</title>
+    <meta charset="UTF-8">
+    <meta name="Autor" content="Matej Banović">
+    <meta name="Opis" content="Student treće godine Fakulteta organizacije i informatike u Varaždinu">
+    <meta name="Ključne riječi" content="html, scss, angular">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="container mt-3">
+        <h2 class="text-center">Izbornik</h2>
+        <nav>
+            <a href="/autor">O autoru</a>
+        </nav>
+    </div>
+    <main>
+        <section id="AutorOpis" class="container mt-5">
+            <div class="text-center mb-4">
+                <img src="/dokumentacija/mbanovic21.jpg" alt="mbanovic21"
+                    class="img-fluid rounded-circle img-thumbnail">
+            </div>
+            <h2 class="text-center mb-4">Podaci o autoru</h2>
+            <ul class="list-group">
+                <li class="list-group-item">Ime i prezime: Matej Banović</li>
+                <li class="list-group-item">
+                    E-mail:
+                    <a target="_blank" href="mailto:mbanovic21@student.foi.hr">mbanovic21@student.foi.hr</a>
+                </li>
+                <li class="list-group-item">
+                    <h2 class="text-center mb-4">ERA model</h2>
+                    <div class="text-center mb-4">
+                        <a href="/dokumentacija/RWA2023mbanovic21.png" target="_blank">
+                            <img src="/dokumentacija/RWA2023mbanovic21.png" alt="ERA_model"
+                                class="img-fluid img-thumbnail" style="max-width: 300px;">
+                        </a>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <h2 class="text-center mb-4">Tablica 1. Pregled konfiguracijskih parametara</h2>
+                    <table class="table table-bordered">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Naziv konfiguracije</th>
+                                <th>Vrijednost</th>
+                                <th>Napravljeno</th>
+                                <th>Informacije koji dijelovi nisu napravljeni</th>
+                                <th>Dodatne informacije o greškama</th>
+                                <th>Istaknuti dijelovi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>jwtValjanost</td>
+                                <td>Broj od 15 - 3600</td>
+                                <td>Da</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>jwtTajniKljuc</td>
+                                <td rowspan="2">
+                                    Veličina: 50 - 100 znakova<br>
+                                    Dozvoljava: velika i mala slova te brojke
+                                </td>
+                                <td>Da</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>tajniKljucSesija</td>
+                                <td>Da</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>appStranicenje</td>
+                                <td>Broj od 5 - 100</td>
+                                <td>Da</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>tmdbApiKeyV3</td>
+                                <td>Nema restrikcija</td>
+                                <td>Da</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </li>
+                <li class="list-group-item">
+                    <h2 class="text-center mb-4">Tablica 2. Pregled resursa, metoda i parametara REST servisa</h2>
+                    <table class="table table-bordered">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th>Resurs <br> Parametri</th>
+                                <th>GET čitanje</th>
+                                <th>POST kreiranje</th>
+                                <th>PUT ažuriranje</th>
+                                <th>DELETE brisanje</th>
+                                <th>Informacije koji dijelovi nisu napravljeni</th>
+                                <th>Dodatne informacije o greškama</th>
+                                <th>Istaknuti dijelovi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>baza/korisnici</td>
+                                <td>Da</td>
+                                <td>Ne</td>
+                                <td>Ne</td>
+                                <td>Ne</td>
+                                <td>Radi što treba, ali ne za ulogu admina nego za sve uloge. Svi statusni kodovi se
+                                    dobro vraćaju!</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>baza/korisnici / {korime}</td>
+                                <td>Da</td>
+                                <td>Ne</td>
+                                <td>Ne</td>
+                                <td>Ne</td>
+                                <td>Radi što treba za sve uloge. Svi statusni kodovi se dobro vraćaju!</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>baza/korisnici /{korime}/prijava</td>
+                                <td>Ne</td>
+                                <td>Ne</td>
+                                <td>Ne</td>
+                                <td>Ne</td>
+                                <td>Napravljeni su neki dijelovi prijave, ali prijava sama po sebi nije funkcionalna!
+                                </td>
+                                <td>Ne prenose se podaci iz body-ja async funkcije "prijaviKorisnika"
+                                    (autentifikacija.js) prema exports.getKorisnikPrijava (restKorisnik.js)</td>
+                                <td>Podaci uspješno dolaze sve do async funkcije "prijaviKorisnika", odnosno uspješno se
+                                    čitaju kao parametri. Sve je potkrijepljeno logovima.</td>
+                            </tr>
+                            <tr>
+                                <td>baza/favoriti</td>
+                                <td>Ne</td>
+                                <td>Ne</td>
+                                <td>Ne</td>
+                                <td>Ne</td>
+                                <td>Ništa nije napravljeno.</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>baza/favoriti/{id}</td>
+                                <td>Ne</td>
+                                <td>Ne</td>
+                                <td>Ne</td>
+                                <td>Ne</td>
+                                <td>Ništa nije napravljeno.</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    baza/dnevnik <br>
+                                    ?stranica=broj <br>
+                                    &sortiraj=[d | m] <br>
+                                    [&datumOd=datum] <br>
+                                    [&datumDo=datum] <br>
+                                    [&vrijemeOd=vrijeme] <br>
+                                    [&vrijemeDo=vrijeme] <br>
+                                </td>
+                                <td>Ne</td>
+                                <td>Ne</td>
+                                <td>Ne</td>
+                                <td>Ne</td>
+                                <td>Ništa nije napravljeno.</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </li>
+            </ul>
+        </section>
+    </main>
+</body>
+
+</html>

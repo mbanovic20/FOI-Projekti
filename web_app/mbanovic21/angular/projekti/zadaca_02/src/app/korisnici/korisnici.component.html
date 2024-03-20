@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="hr">
+
+<head>
+    <title>Profil</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <h2>Popis Korisnika</h2>
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Korisničko ime</th>
+                            <th>Lozinka</th>
+                            <th>Email</th>
+                            <th>Ime</th>
+                            <th>Prezime</th>
+                            <th>Adresa</th>
+                            <th>Datum rođenja</th>
+                            <th>TOTP</th>
+                            <th>Aktivan</th>
+                            <th>Prijava</th>
+                            <th>Aktivacijski kod</th>
+                            <th>Tajni ključ</th>
+                            <th>Tip korisnika ID</th>
+                            <th>Obriši korisnika</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let korisnik of korisnici">
+                            <td>{{korisnik.id}}</td>
+                            <td>{{korisnik.korime}}</td>
+                            <td>{{korisnik.lozinka}}</td>
+                            <td>{{korisnik.email}}</td>
+                            <td>{{korisnik.ime}}</td>
+                            <td>{{korisnik.prezime}}</td>
+                            <td>{{korisnik.adresa}}</td>
+                            <td>{{korisnik['datum_rođenja']}}</td>
+                            <td>{{korisnik.totp}}</td>
+                            <td>{{korisnik.aktivan}}</td>
+                            <td>{{korisnik.prijava}}</td>
+                            <td>{{korisnik.aktivacijskiKod}}</td>
+                            <td>{{korisnik.tajniKljuc}}</td>
+                            <td>{{korisnik.tipKorisnika_id}}</td>
+                            <td>
+                                <button (click)="obrisiKorisnika(korisnik.korime)">Obriši korisnika</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <footer>
+    </footer>
+</body>
+
+</html>

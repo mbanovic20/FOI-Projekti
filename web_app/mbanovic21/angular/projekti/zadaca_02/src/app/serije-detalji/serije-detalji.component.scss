@@ -1,0 +1,70 @@
+$pozadina-tablice: #f9f9f9;
+$boja-naglaska: #28a745;
+$boja-teksta: #333;
+$granica-tablice: #ddd;
+
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  color: $boja-teksta;
+  padding: 20px;
+}
+
+main {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background: $pozadina-tablice;
+
+  th,
+  td {
+    padding: 10px;
+    border: 1px solid $granica-tablice;
+    text-align: left;
+  }
+
+  th {
+    background: $boja-naglaska;
+    color: white;
+  }
+}
+
+button {
+  background: $boja-naglaska;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  text-transform: uppercase;
+  &:hover {
+    background: darken($boja-naglaska, 10%);
+  }
+}
+
+.detalji-tabele {
+  td {
+    max-width: 300px;
+    word-wrap: break-word;
+  }
+
+  img {
+    max-width: 100px;
+    height: auto;
+  }
+}
+
+a {
+  color: $boja-naglaska;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="hr">
+
+<head>
+    <title>Profil</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <main>
+        <section class="profile-container">
+            <h2>Profil</h2>
+            <form #profil="ngForm">
+                <div class="form-field">
+                    <label for="ime">Ime</label>
+                    <input type="text" name="ime" id="ime" ngModel>
+                </div>
+                <div class="form-field">
+                    <label for="prezime">Prezime</label>
+                    <input type="text" name="prezime" id="prezime" ngModel>
+                </div>
+                <div class="form-field">
+                    <label for="lozinka">Lozinka</label>
+                    <input type="password" name="lozinka" id="lozinka" ngModel>
+                </div>
+                <div class="form-field">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" ngModel disabled>
+                </div>
+                <div class="form-field">
+                    <label for="korime">Korisničko ime</label>
+                    <input type="text" name="korime" id="korime" ngModel disabled>
+                </div>
+                <div class="form-field">
+                    <label for="datum_rođenja">Datum rođenja</label>
+                    <input type="text" name="datum_rođenja" id="datum_rođenja" ngModel>
+                </div>
+                <div class="form-field">
+                    <label for="dvostupanjska_autentifikacija">Dvostupanjska autentifikacija</label>
+                    <input type="checkbox" id="dvostupanjska_autentifikacija"
+                        [(ngModel)]="dvostupanjskaAutentikacijaUkljucena" name="dvostupanjska_autentifikacija" ngModel>
+                </div>
+
+                <div *ngIf="dvostupanjskaAutentikacijaUkljucena">
+                    <button (click)="kreirajTajniKljuc()">Kreiraj tajni ključ</button>
+                    <div *ngIf="tajniKljuc">
+                        <label>Vaš tajni ključ:</label>
+                        <input type="text" [value]="tajniKljuc" readonly>
+                    </div>
+                </div>
+                <div *ngIf="dvostupanjskaAutentikacijaUkljucena" class="form-field">
+                    <label for="totp">TOTP Kod</label>
+                    <input name="totp" type="text" id="totp" [(ngModel)]="totp" ngModel>
+                    <!-- <button (click)="potvrdiTOTP()">Potvrdi TOTP</button> -->
+                </div>
+                <input type="submit" value="Ažuriraj podatke" (click)="azurirajKorisnikaSaProvjera()">
+            </form>
+            <div class="recaptcha-token" *ngIf="tokenVisible">
+                <p>reCAPTCHA Token</p>
+                <p>{{reCAPTCHAToken}}</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+    </footer>
+</body>
+
+</html>

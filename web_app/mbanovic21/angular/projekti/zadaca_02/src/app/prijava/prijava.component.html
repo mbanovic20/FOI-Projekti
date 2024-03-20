@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="hr">
+
+<head>
+    <title>Prijava</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <main>
+        <section class="login-container">
+            <h2>Prijava</h2>
+            <form #prijava="ngForm">
+                <div class="form-field">
+                    <label for="username">Korisničko ime</label>
+                    <input name="username" type="text" id="username" required [(ngModel)]="modelPrijava.korime" ngModel>
+                </div>
+                <div class="form-field">
+                    <label for="password">Lozinka</label>
+                    <input name="password" type="password" id="password" required [(ngModel)]="modelPrijava.lozinka"
+                        ngModel>
+                </div>
+                <div class="form-field">
+                    <label for="dvostupanjska_autentifikacija">Koristi dvorazinsku autentifikaciju</label>
+                    <input name="dvostupanjska_autentifikacija" type="checkbox" id="dvostupanjska_autentifikacija"
+                        [(ngModel)]="dvostupanjskaAutentikacijaUkljucena" ngModel>
+                </div>
+                <div *ngIf="dvostupanjskaAutentikacijaUkljucena" class="form-field">
+                    <label for="totp">TOTP Kod</label>
+                    <input name="totp" type="text" id="totp" [(ngModel)]="modelPrijava.totp" ngModel>
+                </div>
+                <input type="submit" value="Prijavi se" (click)="provjeriRECAPTCHA(prijava)">
+                <button class="github-login-btn" (click)="preusmjeriKorisnikaNaGit()">Prijavi se putem GitHuba</button>
+
+            </form>
+
+            <div class="login-info">
+                <p>Inicijalni podaci za prijavu, obican:</p>
+                <p>Korisničko ime: obican</p>
+                <p>Lozinka: rwa</p>
+            </div>
+            <div class="login-info">
+                <p>Inicijalni podaci za prijavu, admin:</p>
+                <p>Korisničko ime: administrator</p>
+                <p>Lozinka: rwa</p>
+            </div>
+            <div class="recaptcha-token" *ngIf="tokenVisible">
+                <p>reCAPTCHA Token</p>
+                <p>{{reCAPTCHAToken}}</p>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

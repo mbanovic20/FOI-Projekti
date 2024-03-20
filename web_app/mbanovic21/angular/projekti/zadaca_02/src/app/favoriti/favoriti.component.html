@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="hr">
+
+<head>
+    <title>Favoriti</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <main>
+        <p *ngIf="autorizacijskaPoruka">{{ autorizacijskaPoruka }}</p>
+        <div *ngIf="serije.length > 0">
+            <h2>Favoriti</h2>
+            <table>
+                <tr>
+                    <th>Naziv</th>
+                    <th>Opis</th>
+                    <th>Broj sezona</th>
+                    <th>Broj epizoda</th>
+                    <th>Popularnost</th>
+                    <th>Poster</th>
+                    <th>Službena stranica</th>
+                    <th>Detalji o sezonama</th>
+                    <th>Obriši iz favorita</th>
+                </tr>
+                <tr *ngFor="let serija of serije; let i = index">
+                    <td>{{ serija.name }}</td>
+                    <td>{{ serija.overview }}</td>
+                    <td>{{ serija.number_of_seasons }}</td>
+                    <td>{{ serija.number_of_episodes }}</td>
+                    <td>{{ serija.popularity }}</td>
+                    <td><img [src]="'https://image.tmdb.org/t/p/w600_and_h900_bestv2/' + serija.poster_path" width="100"
+                            [alt]="'slika_' + serija.name"></td>
+                    <td><a [href]="serija.homepage">Posjetite ovdje</a></td>
+                    <td>
+                        <button (click)="prikaziDetaljeOSezonama(serija.id)">Detalji o sezonama</button>
+                    </td>
+                    <td>
+                        <button (click)="obrisiSeriju(i)">Obriši iz favorita</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </main>
+    <br><br>
+</body>
+
+</html>

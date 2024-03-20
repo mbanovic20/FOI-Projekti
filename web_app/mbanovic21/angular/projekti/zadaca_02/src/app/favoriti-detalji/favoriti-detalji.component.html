@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="hr">
+
+<head>
+    <title>Favoriti - detalji sezona</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+    <main>
+        <p *ngIf="autorizacijskaPoruka">{{ autorizacijskaPoruka }}</p>
+        <div *ngIf="sezone && sezone.length > 0">
+            <h2>Detalji o sezonama</h2>
+            <table>
+                <tr>
+                    <th>Naziv Sezone</th>
+                    <th>ID sezone</th>
+                    <th>Datum emitiranja</th>
+                    <th>Opis</th>
+                    <th>Broj sezone</th>
+                    <th>Broj epizoda</th>
+                    <th>Prosječna ocjena</th>
+                    <th>Poster</th>
+                </tr>
+                <tr *ngFor="let sezona of sezone">
+                    <td>{{ sezona.name }}</td>
+                    <td>{{ sezona.id }}</td>
+                    <td>{{ sezona.air_date }}</td>
+                    <td>{{ sezona.overview }}</td>
+                    <td>{{ sezona.season_number }}</td>
+                    <td>{{ sezona.episode_count }}</td>
+                    <td>{{ sezona.vote_average }}</td>
+                    <td>
+                        <img *ngIf="sezona.poster_path"
+                            [src]="'https://image.tmdb.org/t/p/w600_and_h900_bestv2/' + sezona.poster_path" width="100"
+                            [alt]="'Poster za ' + sezona.name">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div *ngIf="!sezone || sezone.length === 0">
+            <p>Nema dostupnih podataka o sezonama.</p>
+        </div>
+    </main>
+    <br><br>
+</body>
+
+</html>

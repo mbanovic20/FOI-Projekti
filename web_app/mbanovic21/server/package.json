@@ -1,0 +1,22 @@
+{
+	"name": "aplikacija",
+	"version": "1.0.0",
+	"description": "pokretanje app servera",
+	"main": "appServer.mjs",
+	"scripts": {
+		"pripremi": "npm link --save express sqlite3 express-session cors cookie-parser passport passport-github",
+		"start": "NODE_PATH=/usr/lib/node_modules/ node --experimental-fetch ./aplikacija/appServer.mjs rwa_mbanovic21_conf.csv",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Matej Banovic",
+	"license": "ISC",
+	"dependencies": {
+		"cookie-parser": "file:../../../../usr/lib/node_modules/cookie-parser",
+		"cors": "file:../../../../usr/lib/node_modules/cors",
+		"express": "file:../../../../usr/lib/node_modules/express",
+		"express-session": "file:../../../../usr/lib/node_modules/express-session",
+		"passport": "file:../../../../usr/lib/node_modules/passport",
+		"passport-github": "file:../../../../usr/lib/node_modules/passport-github",
+		"sqlite3": "file:../../../../usr/lib/node_modules/sqlite3"
+	}
+}

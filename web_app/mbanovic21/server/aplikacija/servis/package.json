@@ -1,0 +1,14 @@
+{
+	"name": "servis",
+	"version": "1.0.0",
+	"description": "pokretanje rest servera",
+	"main": "restServer.mjs",
+	"scripts": {
+		"pripremi": "npm link --save express sqlite3 express-session cors cookie-parser",
+		"start": "NODE_PATH=/usr/lib/node_modules/ node --experimental-fetch restServer.mjs ../../rwa_mbanovic21_conf.csv",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Matej Banović",
+	"license": "ISC",
+	"dependencies": {}
+}

@@ -1,0 +1,31 @@
+$primary-color: #4caf50;
+$border-radius: 5px;
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+
+  button {
+    margin-left: auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: $border-radius;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+
+    &:hover {
+      background-color: white;
+      color: black;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

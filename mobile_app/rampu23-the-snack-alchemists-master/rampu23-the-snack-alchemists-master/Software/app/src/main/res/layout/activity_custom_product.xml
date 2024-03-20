@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Red 1 -->
+
+
+    <!-- Red 2 -->
+
+
+    <!-- Red 3 -->
+
+
+    <!-- Button za dodavanje proizvoda -->
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="165dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="189dp"
+        android:layout_marginBottom="126dp"
+        android:text="STVORI VLASTITI PROIZVOD"
+        app:layout_constraintBottom_toTopOf="@+id/spinnerSastojak1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.403"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Spinner
+        android:id="@+id/spinnerKolicina1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewKolicina1"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/textViewKolicina1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="113dp"
+        android:text="Količina"
+        app:layout_constraintEnd_toStartOf="@+id/spinnerKolicina1"
+        app:layout_constraintStart_toEndOf="@+id/spinnerSastojak1"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <Spinner
+        android:id="@+id/spinnerSastojak1"
+        android:layout_width="143dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="109dp"
+        app:layout_constraintEnd_toStartOf="@+id/textViewKolicina1"
+        app:layout_constraintStart_toEndOf="@+id/textViewSastojak1"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/textViewSastojak1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="112dp"
+        android:text="Sastojak"
+        app:layout_constraintEnd_toStartOf="@+id/spinnerSastojak1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <Spinner
+        android:id="@+id/spinnerKolicina2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="47dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewKolicina"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerKolicina1" />
+
+    <Spinner
+        android:id="@+id/spinnerSastojak2"
+        android:layout_width="140dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="44dp"
+        app:layout_constraintEnd_toStartOf="@+id/textViewKolicina"
+        app:layout_constraintStart_toEndOf="@+id/textViewSastojak2"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerSastojak1" />
+
+    <TextView
+        android:id="@+id/textViewKolicina"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="51dp"
+        android:text="Količina"
+        app:layout_constraintEnd_toStartOf="@+id/spinnerKolicina2"
+        app:layout_constraintStart_toEndOf="@+id/spinnerSastojak2"
+        app:layout_constraintTop_toBottomOf="@+id/textViewKolicina1" />
+
+    <TextView
+        android:id="@+id/textViewSastojak2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="52dp"
+        android:text="Sastojak"
+        app:layout_constraintEnd_toStartOf="@+id/spinnerSastojak2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSastojak1" />
+
+    <TextView
+        android:id="@+id/textViewKolicina3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="256dp"
+        android:text="Količina"
+        app:layout_constraintBottom_toTopOf="@+id/buttonDodajProizvod"
+        app:layout_constraintEnd_toStartOf="@+id/spinnerKolicina3"
+        app:layout_constraintStart_toEndOf="@+id/spinnerSastojak3"
+        app:layout_constraintTop_toBottomOf="@+id/textViewKolicina"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Spinner
+        android:id="@+id/spinnerSastojak3"
+        android:layout_width="143dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginBottom="252dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonDodajProizvod"
+        app:layout_constraintEnd_toStartOf="@+id/textViewKolicina3"
+        app:layout_constraintStart_toEndOf="@+id/textViewSastojak3"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerSastojak2" />
+
+
+    <Spinner
+        android:id="@+id/spinnerKolicina3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:layout_marginBottom="254dp"
+        app:layout_constraintBottom_toTopOf="@+id/buttonDodajProizvod"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textViewKolicina3"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerKolicina2" />
+
+    <TextView
+        android:id="@+id/textViewSastojak3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="52dp"
+        android:text="Sastojak"
+        app:layout_constraintBottom_toTopOf="@+id/buttonDodajProizvod"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSastojak2"
+        app:layout_constraintVertical_bias="0.007" />
+
+    <Button
+        android:id="@+id/buttonDodajProizvod"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="132dp"
+        android:layout_marginTop="252dp"
+        android:text="Dodaj proizvod"
+        app:layout_constraintStart_toStartOf="@+id/textViewSastojak3"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerSastojak3" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

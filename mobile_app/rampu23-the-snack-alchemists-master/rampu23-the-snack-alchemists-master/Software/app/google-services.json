@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "754293725056",
+    "firebase_url": "https://thesnackalchemists-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "thesnackalchemists",
+    "storage_bucket": "thesnackalchemists.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:754293725056:android:ec81284f1dfb5c7a469365",
+        "android_client_info": {
+          "package_name": "hr.foi.rampu.snackalchemist"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqXRKaNVQDM9NZqLNaPEvKTuxlcLqke2U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

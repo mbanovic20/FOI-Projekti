@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="PresentationLayer.UserControls.addPreschoolYear"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PresentationLayer.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Loaded="UserControl_Loaded">
+    <DockPanel>
+        
+        <Label DockPanel.Dock="Top" HorizontalContentAlignment="Center" Content="Add PreSchoolYear" FontWeight="Bold" FontSize="15" ></Label>
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="20,0,20,10" >
+            <Label Content="Naziv Godine : "></Label>
+            <TextBox x:Name="txtYear" DockPanel.Dock="Top" Width="100" ></TextBox>
+        </StackPanel>
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,20,20">
+            <Button x:Name="addExitingGroup" DockPanel.Dock="Top" Height="20" Click="addExitingGroup_Click" >Add existing Gruop</Button>
+            <Button x:Name="addNewGroup" DockPanel.Dock="Top" Height="20" Click="addNewGroup_Click" Margin="10,0,0,0">Add New Group</Button>
+            <Button x:Name="addNewYear" DockPanel.Dock="Top" Height="20" Click="addNewYear_Click" Margin="10,0,0,0"  >Add New Preschool Year</Button>
+        </StackPanel>
+        <DataGrid x:Name="dgvGroups" Margin="20,10,20,10"></DataGrid>
+    </DockPanel>
+</UserControl>
